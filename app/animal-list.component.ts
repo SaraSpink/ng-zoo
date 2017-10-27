@@ -17,6 +17,7 @@ import { Animal } from './animal.model'
       <tr>
         <th>Species</th>
         <th>Name</th>
+        <th>Age</th>
         <th>Diet</th>
         <th>Location</th>
         <th>Number of caretakers</th>
@@ -27,15 +28,16 @@ import { Animal } from './animal.model'
       </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let animal of childAnimalList | age:filterByAge'>
-      <td>{{animal.species}}</td>
-      <td>{{animal.name}}</td>
-      <td>{{animal.diet}}</td>
-      <td>{{animal.location}}</td>
-      <td>{{animal.caretakers}}</td>
-      <td>{{animal.sex}}</td>
-      <td>{{animal.likes}}</td>
-      <td>{{animal.dislikes}}</td>
+    <tr *ngFor='let listAnimal of childAnimalList | age:filterByAge'>
+      <td>{{listAnimal.species}}</td>
+      <td>{{listAnimal.name}}</td>
+      <td>{{listAnimal.age}}</td>
+      <td>{{listAnimal.diet}}</td>
+      <td>{{listAnimal.location}}</td>
+      <td>{{listAnimal.caretakers}}</td>
+      <td>{{listAnimal.sex}}</td>
+      <td>{{listAnimal.likes}}</td>
+      <td>{{listAnimal.dislikes}}</td>
       <td><button (click)="editButtonHasBeenClicked(animal)">Edit Animal</button></td>
     </tr>
     </tbody>
