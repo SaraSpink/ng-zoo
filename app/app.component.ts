@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Beer } from './beer.model'
+import { Animal } from './animal.model'
 
 @Component({
   selector: 'app-root',
@@ -8,49 +8,49 @@ import { Beer } from './beer.model'
 <div class="container">
   <h1>{{currentFocus}}</h1>
 
-  <label>Employee or Guest Select</label>
-  <select (change)="onChange($event.target.value)">
-    <option value= "employee">Employee</option>
-    <option value= "patron">Guest</option>
-  </select>
+  <div id="animalList" class= "well">
+    <h3>Animals</h3>
 
-  <div id="beerList" class= "well">
-    <h3>Available Kegs</h3>
-
-    <beer-list [childBeerList]="masterBeerList" (clickSender)="editBeer($event)"></beer-list>
+    <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
   </div>
 
-  <edit-beer [childSelectedBeer]= "selectedBeer" (tapButtonClickedSender)="finishedEditing()"></edit-beer>
-  <new-beer (newBeerSender)= "addBeer($event)"></new-beer>
+  <edit-animal [childSelectedAnimal]= "selectedAnimal" (submitButtonClickedSender)="finishedEditing()"></edit-animal>
+  <new-animal (newAnimalrSender)= "addAnimal($event)"></new-animal>
 </div>
  `
 
 })
 
 export class AppComponent {
-  currentFocus: string = 'TAP THAT 5000'
-  selectedBeer = null;
-  filterByPatron: string = "employee";
-  masterBeerList: Beer[] = [
-    new Beer('Red Ale', 'Hair of the Dog', 5, 6.5),
-    new Beer('Brown Ale', 'Mac and Jack\'s', 4, 7.5),
-    new Beer('Stout', 'Guiness', 7, 7.25)
+  currentFocus: string = 'Zoo'
+  selectedAnimal = null;
+
+  masterAnimalList: Animal[] = [
+    new Animal('Timber Wolf', 'Susan', 8, 'Carnivore', 'Dark Forest', 3, 'female', 'howling at the moon', 'cheese'),
+    new Animal('Hippopotamus', 'Mac', 4, 'Herbivore', 'Sub-Sahara', 5, 'male', 'beach balls', 'boats'),
+    new Animal('Three-toed Sloth', 'Harry', 2, 'Herbivore', 'Rain Forest', 1, 'male', 'cucumbers', 'ghosts'),
   ];
 
-  editBeer(clickedBeer){
-    this.selectedBeer = clickedBeer;
-  }
-
-  onChange(optionFromMenu) {
-    this.filterByPatron = optionFromMenu;
+  editAnimal(clickedAnimal){
+    this.selectedAnimal = clickedAnimal;
   }
 
   finishedEditing(){
-    this.selectedBeer = null;
+    this.selectedAnimal = null;
   }
 
-  addBeer(newBeerFromChild: Beer){
-    this.masterBeerList.push(newBeerFromChild);
+  addAnimal(newAnimalFromChild: Animal){
+    this.masterAnimalList.push(newAnimalFromChild);
   }
 
 }
+
+// Species: "Northwest Black Tailed Deer"
+// Name: "Tinkerbell"
+// Age: 8
+// Diet: "Herbivore"
+// Location: "Northern Trail"
+// Caretakers: 2
+// Sex: "Female"
+// Likes: "Delicate roots and leaves"
+// Dislikes: "Loud Noises"
