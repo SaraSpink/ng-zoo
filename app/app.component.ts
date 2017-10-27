@@ -14,7 +14,7 @@ import { Animal } from './animal.model';
     <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
   </div>
 
-  <edit-animal [childSelectedAnimal]= "selectedAnimal" (submitButtonClickedSender)="finishedEditing()"></edit-animal>
+  <animal-edit [childSelectedAnimal]= "selectedAnimal" (submitButtonClickedSender)="finishedEditing()"></animal-edit>
   <new-animal (newAnimalrSender)= "addAnimal($event)"></new-animal>
 </div>
  `

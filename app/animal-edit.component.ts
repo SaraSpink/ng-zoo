@@ -2,15 +2,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
-  selector: 'edit-animal',
+  selector: 'animal-edit',
   template: `
-  <div>
+
     <div *ngIf="childSelectedAnimal">
-      <h3>Edit {{childSelectedAnimal.name}} {{childSelectedAnimal.species}}</h3>
+      <h3>Edit {{childSelectedAnimal.name}}</h3>
       <table class="table">
         <thead>
           <th>Enter Species</th>
           <th>Enter Animal's Name</th>
+          <th>Age</th>
           <th>Carnivore or Herbivore?</th>
           <th>Location</th>
           <th>Number of caretakers</th>
@@ -21,6 +22,7 @@ import { Animal } from './animal.model';
         <tbody>
           <td><input [(ngModel)]="childSelectedAnimal.species"></td>
           <td><input [(ngModel)]="childSelectedAnimal.name"></td>
+          <td><input [(ngModel)]="childSelectedAnimal.age"></td>
           <td><input [(ngModel)]="childSelectedAnimal.diet"></td>
           <td><input [(ngModel)]="childSelectedAnimal.location"><td>
           <td><input [(ngModel)]="childSelectedAnimal.caretakers"></td>
@@ -31,7 +33,7 @@ import { Animal } from './animal.model';
       </table>
       <button class= "btn btn-info" (click)="submitButtonClicked()" >Done editing!</button>
     </div>
-  </div>
+
   `
 })
 

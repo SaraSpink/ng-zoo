@@ -36,5 +36,4 @@ export class AgePipe implements PipeTransform {
       return input;
     }
   }
-
 }
