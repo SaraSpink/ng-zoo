@@ -28,7 +28,7 @@ import { Animal } from './animal.model'
       </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let listAnimal of childAnimalList | age:filterByAge'>
+    <tr *ngFor='let listAnimal of childAnimalList'>
       <td>{{listAnimal.species}}</td>
       <td>{{listAnimal.name}}</td>
       <td>{{listAnimal.age}}</td>

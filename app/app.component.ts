@@ -25,7 +25,7 @@ import { Animal } from './animal.model';
 export class AppComponent {
   currentFocus: string = 'Zoo'
   selectedAnimal = null;
-  @Input() childAnimalList: Animal[];
+
   masterAnimalList: Animal[] = [
     new Animal('Timber Wolf', 'Susan', 8, 'Carnivore', 'Dark Forest', 3, 'female', 'howling at the moon', 'cheese'),
     new Animal('Hippopotamus', 'Mac', 4, 'Herbivore', 'Sub-Sahara', 5, 'male', 'beach balls', 'boats'),
