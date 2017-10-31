@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
@@ -15,7 +15,8 @@ import { Animal } from './animal.model';
   </div>
 
   <animal-edit [childSelectedAnimal]= "selectedAnimal" (submitButtonClickedSender)="finishedEditing()"></animal-edit>
-  <new-animal (newAnimalrSender)= "addAnimal($event)"></new-animal>
+
+  <new-animal (newAnimalSender)= "addAnimal($event)"></new-animal>
 </div>
  `
 
@@ -24,7 +25,7 @@ import { Animal } from './animal.model';
 export class AppComponent {
   currentFocus: string = 'Zoo'
   selectedAnimal = null;
-
+  @Input() childAnimalList: Animal[];
   masterAnimalList: Animal[] = [
     new Animal('Timber Wolf', 'Susan', 8, 'Carnivore', 'Dark Forest', 3, 'female', 'howling at the moon', 'cheese'),
     new Animal('Hippopotamus', 'Mac', 4, 'Herbivore', 'Sub-Sahara', 5, 'male', 'beach balls', 'boats'),
@@ -40,7 +41,10 @@ export class AppComponent {
   }
 
   addAnimal(newAnimalFromChild: Animal){
+    console.log("im here");
+    console.log(newAnimalFromChild);
     this.masterAnimalList.push(newAnimalFromChild);
+    console.log(this.masterAnimalList);
   }
 
 }

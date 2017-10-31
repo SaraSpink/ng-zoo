@@ -30,16 +30,30 @@ import { Animal } from './animal.model';
         <td><input #newAnimalLikes></td>
         <td><input #newAnimalDislikes></td>
       </tbody>
-      <button (click)="submitForm(newAnimalSpecies.value, newAnimalName.value, newAnimalDiet.value, newAnimalLocation.value, newAnimalSex.value, newAnimalLikes.value, newAnimalDislikes.value); newAnimalSpecies.value=''; newAnimalName.value=''; newAnimalDiet.value=''; newAnimalLocation.value=''; newAnimalCaretakers = null; newAnimalSex.value=''; newAnimalLikes.value=''; newAnimalDislikes.value='';" class="btn btn-info">Add Animal</button>
+      <button (click)="submitForm(
+        newAnimalSpecies.value,
+        newAnimalName.value,
+        newAnimalDiet.value,
+        newAnimalLocation.value,
+        newAnimalSex.value,
+        newAnimalLikes.value,
+        newAnimalDislikes.value);
+
+        "
+        class="btn btn-info">Add Animal</button>
     </table>
   </div>
   `
 })
 
 export class NewAnimalComponent{
+  newAnimal: string = '';
   @Output() newAnimalSender = new EventEmitter();
+
   submitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string){
     let newAnimalToAdd: Animal = new Animal(species,name,age,diet,location,caretakers,sex,likes,dislikes);
+    console.log(newAnimalToAdd);
     this.newAnimalSender.emit(newAnimalToAdd);
+
   }
 }

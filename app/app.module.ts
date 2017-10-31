@@ -13,7 +13,8 @@ import { AgePipe } from './age.pipe';
                 AnimalListComponent,
                 EditAnimalComponent,
                 NewAnimalComponent,
-                AgePipe],
+                AgePipe
+],
   bootstrap:    [ AppComponent ]
 })
 
