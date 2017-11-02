@@ -7,9 +7,10 @@ import { Animal } from './animal.model'
   template: `
 <label>Age Filter</label>
 <select (change)="onChange($event.target.value)">
-  <option value="allAnimals"selected="selected">All Animals</option>
+
   <option value="twoAndUnder">Young Animals</option>
   <option value="overTwo">Mature Animals</option>
+  <option value="allAnimals">All Animals</option>
 </select>
 
   <table class="table">
