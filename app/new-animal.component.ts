@@ -13,6 +13,7 @@ import { Animal } from './animal.model';
       <thead>
         <th>Enter Species</th>
         <th>Enter Animal's Name</th>
+        <th>Enter Animal's Age</th>
         <th>Carnivore or Herbivore?</th>
         <th>Location</th>
         <th>Number of caretakers</th>
@@ -23,6 +24,7 @@ import { Animal } from './animal.model';
       <tbody>
         <td><input #newAnimalSpecies></td>
         <td><input #newAnimalName></td>
+        <td><input #newAnimalAge></td>
         <td><input #newAnimalDiet></td>
         <td><input #newAnimalLocation></td>
         <td><input #newAnimalCaretakers></td>
@@ -33,8 +35,10 @@ import { Animal } from './animal.model';
       <button (click)="submitForm(
         newAnimalSpecies.value,
         newAnimalName.value,
+        newAnimalAge.value,
         newAnimalDiet.value,
         newAnimalLocation.value,
+        newAnimalCaretakers.value,
         newAnimalSex.value,
         newAnimalLikes.value,
         newAnimalDislikes.value);
