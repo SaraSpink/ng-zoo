@@ -17,16 +17,16 @@ export class AgePipe implements PipeTransform {
     //   }
     // }
     //   return output;
-   if(animalAge === "twoAndUnder"){
+   if(animalAge === "mature"){
         for (let i = 0; i < input.length; i++) {
-          if (input[i].age <= 2) {
+          if (input[i].age > 2) {
             output.push(input[i]);
           }
         }
       return output;
-    } else if (animalAge === "overTwo"){
+    } else if (animalAge === "young"){
       for(var i=0; i<input.length;i++){
-        if(input[i].age > 2){
+        if(input[i].age <= 2){
           output.push(input[i]);
         }
       }

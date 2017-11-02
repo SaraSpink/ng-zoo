@@ -7,10 +7,10 @@ import { Animal } from './animal.model'
   template: `
 <label>Age Filter</label>
 <select (change)="onChange($event.target.value)">
-
-  <option value="twoAndUnder">Young Animals</option>
-  <option value="overTwo">Mature Animals</option>
   <option value="allAnimals">All Animals</option>
+  <option value="young">Young Animals</option>
+  <option value="mature">Mature Animals</option>
+
 </select>
 
   <table class="table">
@@ -29,7 +29,7 @@ import { Animal } from './animal.model'
       </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let listAnimal of childAnimalList'>
+    <tr *ngFor='let listAnimal of childAnimalList | age:filterByAge'>
       <td>{{listAnimal.species}}</td>
       <td>{{listAnimal.name}}</td>
       <td>{{listAnimal.age}}</td>
