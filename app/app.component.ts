@@ -35,7 +35,7 @@ export class AppComponent {
   editAnimal(clickedAnimal){
     console.log("edit animal here")
     console.log(clickedAnimal)
-  
+
     this.selectedAnimal = clickedAnimal;
     console.log(this.selectedAnimal)
   }

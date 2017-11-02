@@ -38,7 +38,7 @@ import { Animal } from './animal.model'
       <td>{{listAnimal.sex}}</td>
       <td>{{listAnimal.likes}}</td>
       <td>{{listAnimal.dislikes}}</td>
-      <td><button (click)="editButtonHasBeenClicked(animal)">Edit {{listAnimal.name}}</button></td>
+      <td><button (click)="editButtonHasBeenClicked(listAnimal)">Edit {{listAnimal.name}}</button></td>
     </tr>
     </tbody>
   </table>
@@ -51,7 +51,7 @@ export class AnimalListComponent {
   @Output() clickSender = new EventEmitter();
   filterByAge: string = "allAnimals";
 
-  editButtonHasBeenClicked(animalToEdit, Animal) {
+  editButtonHasBeenClicked(animalToEdit: Animal) {
     this.clickSender.emit(animalToEdit);
   }
 
