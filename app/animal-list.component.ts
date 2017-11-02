@@ -38,7 +38,7 @@ import { Animal } from './animal.model'
       <td>{{listAnimal.sex}}</td>
       <td>{{listAnimal.likes}}</td>
       <td>{{listAnimal.dislikes}}</td>
-      <td><button (click)="editButtonHasBeenClicked(animal)">Edit Animal</button></td>
+      <td><button (click)="editButtonHasBeenClicked(animal)">Edit {{listAnimal.name}}</button></td>
     </tr>
     </tbody>
   </table>

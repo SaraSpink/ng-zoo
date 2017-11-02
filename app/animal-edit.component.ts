@@ -30,7 +30,7 @@ import { Animal } from './animal.model';
           <td><input [(ngModel)]="childSelectedAnimal.dislikes"><td>
         </tbody>
       </table>
-      <button class="btn btn-info" (click)="submitButtonClicked()">Done editing!</button>
+      <button class="btn btn-info" (click)="submitChangesButtonClicked()">Submit Changes!</button>
     </div>
 
   `
@@ -38,20 +38,9 @@ import { Animal } from './animal.model';
 
 export class AnimalEditComponent {
   @Input() childSelectedAnimal: Animal;
-  @Output() submitButtonClickedSender = new EventEmitter();
+  @Output() submitChangesButtonClickedSender = new EventEmitter();
 
   submitButtonClicked(){
-  debugger;
-    this.submitButtonClickedSender.emit();
+    this.submitChangesButtonClickedSender.emit();
   }
 }
-
-// Species: "Northwest Black Tailed Deer"
-// Name: "Tinkerbell"
-// Age: 8
-// Diet: "Herbivore"
-// Location: "Northern Trail"
-// Caretakers: 2
-// Sex: "Female"
-// Likes: "Delicate roots and leaves"
-// Dislikes: "Loud Noises"
