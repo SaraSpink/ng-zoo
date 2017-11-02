@@ -53,6 +53,15 @@ import { Animal } from './animal.model';
         newAnimalSex.value,
         newAnimalLikes.value,
         newAnimalDislikes.value);
+        newAnimalSpecies.value='';
+        newAnimalName.value='';
+        newAnimalAge.value=null;
+        newAnimalDiet.value='';
+        newAnimalLocation.value='';
+        newAnimalCaretakers.value=null;
+        newAnimalSex.value='';
+        newAnimalLikes.value='';
+        newAnimalDislikes.value='';
         "
         class="btn btn-info">Add Animal</button>
     </table>
@@ -68,6 +77,5 @@ export class NewAnimalComponent{
     let newAnimalToAdd: Animal = new Animal(species,name,age,diet,location,caretakers,sex,likes,dislikes);
     console.log(newAnimalToAdd);
     this.newAnimalSender.emit(newAnimalToAdd);
-
   }
 }
