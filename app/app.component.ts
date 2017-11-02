@@ -11,10 +11,10 @@ import { Animal } from './animal.model';
   <div id="animalList" class= "well">
     <h3>Animals</h3>
 
-    <animal-list [childAnimalList]="masterAnimalList" (editButtonHasBeenClickedSender)="editAnimal($event)"></animal-list>
+  <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
   </div>
 
-  <animal-edit [childSelectedAnimal]="selectedAnimal" (submitButtonClickedSender)="finishedEditing()"></animal-edit>
+  <animal-edit [childSelectedAnimal]="selectedAnimal" (editButtonHasBeenClickedSender)="finishedEditing()"></animal-edit>
 
   <new-animal (newAnimalSender)= "addAnimal($event)"></new-animal>
 </div>
@@ -35,7 +35,7 @@ export class AppComponent {
   editAnimal(clickedAnimal){
     console.log("edit animal here")
     console.log(clickedAnimal)
-    debugger;
+  
     this.selectedAnimal = clickedAnimal;
     console.log(this.selectedAnimal)
   }
