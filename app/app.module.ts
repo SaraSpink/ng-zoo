@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { FormsModule }  from '@angular/forms';
 import { AnimalListComponent } from './animal-list.component';
-import { EditAnimalComponent } from './animal-edit.component';
+import { AnimalEditComponent } from './animal-edit.component';
 import { NewAnimalComponent } from './new-animal.component';
 import { AgePipe } from './age.pipe';
 
@@ -11,7 +11,7 @@ import { AgePipe } from './age.pipe';
   imports: [ BrowserModule, FormsModule],
   declarations: [ AppComponent,
                 AnimalListComponent,
-                EditAnimalComponent,
+                AnimalEditComponent,
                 NewAnimalComponent,
                 AgePipe
 ],

@@ -75,7 +75,7 @@ export class NewAnimalComponent{
 
   submitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string){
     let newAnimalToAdd: Animal = new Animal(species,name,age,diet,location,caretakers,sex,likes,dislikes);
-    console.log(newAnimalToAdd);
+    
     this.newAnimalSender.emit(newAnimalToAdd);
   }
 }
